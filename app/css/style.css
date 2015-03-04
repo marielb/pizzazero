@@ -1,0 +1,80 @@
+#userInput {
+	font-family: 'Source Sans Pro', sans-serif;
+	background-color: #F2784B;
+	color: #fff;
+	height: 100%;
+}
+
+#userInput-side {
+	width: 24%;
+	z-index: 6;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+
+#map-canvas {
+	height: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+.secondaryColor {
+  color: #FDE3A7;
+}
+
+.logo {
+	margin: 5% auto;
+}
+
+.logo h1 {
+	line-height: 60%;
+	font-size: 6rem;
+	font-family: 'Slabo 27px', sans-serif;
+	color: #fff;
+}
+
+.logo img {
+	width: 40%;
+}
+
+paper-input /deep/ ::-webkit-input-placeholder {
+  color: #fff;
+}
+
+paper-input /deep/ ::-moz-placeholder {
+  color: #fff;
+}
+
+paper-input /deep/ :-ms-input-placeholder {
+  color: #fff;
+}
+
+paper-input, paper-slider {
+  color: #fff;
+  width: 100%;
+}
+
+paper-slider::shadow #sliderKnobInner,
+paper-slider::shadow #sliderBar::shadow #activeProgress,
+paper-slider::shadow #sliderKnobInner::before {
+  background-color: #f4b400;
+}
+
+paper-button {
+	background-color: #4ECDC4;
+	width: 100%;
+	margin: 0;
+}
+
+paper-slider::shadow #sliderBar::shadow #progressContainer,
+paper-slider::shadow .slider-markers::after,
+paper-slider::shadow .slider-marker::after {
+	background-color: #ddd;
+}
+
+#hungerLabel {
+  color: #FDE3A7;
+}

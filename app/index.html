@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-framework="react">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>pizza zero</title>
+
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/foundation.min.css">
+
+		<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+  		<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+  		<link href="bower_components/paper-input/paper-input.html" rel="import">
+  		<link href="bower_components/paper-slider/paper-slider.html" rel="import">
+  		<link href="bower_components/paper-button/paper-button.html" rel="import">
+	</head>
+	<body>
+	</body>
+</html>
+
+
+<script id="pizzazero" type="text/x-handlebars-template">
+		<div id="map-canvas"></div>
+	<section id="userInput">
+		<div class="row">
+			<div class="logo small-12 large-3 large-centered columns">
+				<h1>pizza</h1>
+				<h1>zer<img src="img/pizza.png" class="zero"></h1>
+				{{test}}
+				<div class="startLocation">
+					<paper-input class="custom" floatingLabel="true" label="address, city, state"></paper-input>
+				</div>
+
+				<br>
+
+				<div class="hunger">
+					I want <span id="hungerLabel">{{numSlices}}</span> {{hungerText}}
+					<paper-slider id="hunger" pin snaps min="1" max="8" step="1" value="{{numSlices}}"></paper-slider>
+				</div>
+
+				<br>
+
+				<paper-button raised>zero in</paper-button>
+			</div>
+		</div>
+	</section>
+</script>
+
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/underscore/underscore.js"></script>
+<script src="node_modules/backbone/backbone.js"></script>
+<script src="bower_components/handlebars/handlebars.js"></script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+<script type="text/javascript" src="js/views/landing.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+
