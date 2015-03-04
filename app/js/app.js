@@ -11,17 +11,19 @@ var app = app || {};
 (function () {
 	'use strict';
 
-    // Initialize the main view
-    new PizzaZeroView({
-    	el: $('body')
-    });
-
 	CoreStyle.g.paperInput.labelColor = '#f4b400';
 	CoreStyle.g.paperInput.focusedColor = '#FDE3A7';
 	CoreStyle.g.paperInput.invalidColor = '#fff';
 
-var map;
-var infowindow;
+  var map;
+  var viewOptions = {
+    el: $('body'),
+  };
+
+  var infowindow;
+
+  // Initialize the main view
+  new PizzaZeroView(viewOptions);
 
 function initialize() {
   var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
@@ -30,6 +32,7 @@ function initialize() {
     center: pyrmont,
     zoom: 15
   });
+  viewOptions.map = map;
 
   var request = {
     location: pyrmont,

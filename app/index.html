@@ -23,13 +23,13 @@
 
 
 <script id="pizzazero" type="text/x-handlebars-template">
-		<div id="map-canvas"></div>
-	<section id="userInput">
+		<div id="map-canvas" class="mapCanvas"></div>
+	<section id="userInput" class="userInput">
 		<div class="row">
 			<div class="logo small-12 large-3 large-centered columns">
-				<h1>pizza</h1>
+				<div class="heading">pizza</div>
 				<h1>zer<img src="img/pizza.png" class="zero"></h1>
-				{{test}}
+
 				<div class="startLocation">
 					<paper-input class="custom" floatingLabel="true" label="address, city, state"></paper-input>
 				</div>
@@ -43,7 +43,7 @@
 
 				<br>
 
-				<paper-button raised>zero in</paper-button>
+				<paper-button raised id="js-zero-in">zero in</paper-button>
 			</div>
 		</div>
 	</section>

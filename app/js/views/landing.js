@@ -1,9 +1,11 @@
 var PizzaZeroView = Backbone.View.extend({
 
+	map: null,
 	template: null,
 
 	events: {
-		'change #hunger': 'changeNumSlices'
+		'change #hunger': 'changeNumSlices',
+		'click #js-zero-in': 'clickZeroIn'
 	},
 
 	data: {
@@ -11,18 +13,19 @@ var PizzaZeroView = Backbone.View.extend({
 		hungerText: 'pizza slices'
 	},
 
-	initialize: function() {
-		_.bindAll(this, 'render', 'changeNumSlices');
+	initialize: function(options) {
+		this.options = options;
+		_.bindAll(this, 'render', 'changeNumSlices', 'clickZeroIn');
 
 		var source = $('#pizzazero').html();
 		this.template = Handlebars.compile(source);
 
 		this.render();
-		
+
 		this.delegateEvents(this.events);
 		var hunger = document.querySelector('#hunger');
 	},
- 
+
 	render: function() {
 		this.$el.html(this.template(this.data));
 	},
@@ -38,6 +41,17 @@ var PizzaZeroView = Backbone.View.extend({
 		}
 
 		this.render();
+	},
+
+	clickZeroIn: function() {
+		$('.userInput').removeClass('large-3');
+		$('.userInput').addClass('userInputLeft');
+		var $mapCanvas = $('.mapCanvas').removeClass('mapCanvas');
+		$('.mapCanvas').addClass('mapCanvasRight');
+		google.maps.event.trigger(this.options.map, 'resize');
 	}
 
 });
+
+
+

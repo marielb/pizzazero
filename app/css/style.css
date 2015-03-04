@@ -1,24 +1,32 @@
-#userInput {
+
+.heading {
+  font-size: 600%;
+}
+
+.userInput {
 	font-family: 'Source Sans Pro', sans-serif;
 	background-color: #F2784B;
 	color: #fff;
 	height: 100%;
+  width: 95%;
+  float: left;
 }
 
-#userInput-side {
-	width: 24%;
-	z-index: 6;
-	position: absolute;
-	height: 100%;
-	top: 0;
-	left: 0;
+.userInputLeft {
+  width: 30%;
+  transition: width 2s;
 }
 
-
-#map-canvas {
+.mapCanvas {
+  float: right;
 	height: 100%;
-	position: relative;
-	z-index: 1;
+  width: 5%;
+}
+
+.mapCanvasRight {
+  display: block;
+  width: 70%;
+  transition: width 2s;
 }
 
 .secondaryColor {
