@@ -1,10 +1,10 @@
 pizza zero
 ========
 
-A walking route to a pizza restaurant such that you burn the calories you're about to consume.
+a walking route to a pizza restaurant such that you burn the calories you're about to consume
 
-## Running
+## run it, run it
 
-1. Install the dependencies:  
+1. install dependencies:  
     > bower i
-2. Spin up an HTTP server (e.g. `python -m SimpleHTTPServer`) and visit localhost
+2. spin up an HTTP server (e.g. `python -m SimpleHTTPServer`) and visit localhost
