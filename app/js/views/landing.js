@@ -48,7 +48,7 @@ var PizzaZeroView = Backbone.View.extend({
 	clickZeroIn: function() {
 		$('.userInput').addClass('userInputLeft').done(function() {
 			$('.userInputLeft').addClass('large-10');
-			$('.userInputLeft').removeClass('large-3');
+			$('.logo').removeClass('large-3');
 		});
 	}
 
