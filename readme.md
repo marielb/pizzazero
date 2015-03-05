@@ -5,6 +5,8 @@ A walking route to a pizza restaurant such that you burn the calories you're abo
 
 ## Running
 
-1. Install the dependencies:  
+1. Instal nodejs: http://nodejs.org/
+2. sudo npm install -g bower
+3. Install the dependencies:
     > bower i
-2. Spin up an HTTP server (e.g. `python -m SimpleHTTPServer`) and visit localhost
+4. Spin up an HTTP server (e.g. `python -m SimpleHTTPServer`) and visit localhost
