@@ -17,6 +17,8 @@ var PizzaZeroView = Backbone.View.extend({
 		this.options = options;
 		_.bindAll(this, 'render', 'changeNumSlices', 'clickZeroIn');
 
+
+
 		var source = $('#pizzazero').html();
 		this.template = Handlebars.compile(source);
 
@@ -46,8 +48,6 @@ var PizzaZeroView = Backbone.View.extend({
 	clickZeroIn: function() {
 		$('.logo ').addClass('large-10');
 		$('.userInput').addClass('userInputLeft');
-		console.log(this.options.map);
-		window.map = this.options.map;
 	}
 
 });
