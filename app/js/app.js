@@ -16,7 +16,7 @@ var app = app || {};
 	CoreStyle.g.paperInput.invalidColor = '#fff';
 
 	var viewOptions = {
-		el: $('body'),
+		el: $('.pizzaForm'),
 	};
 
 	var infowindow;

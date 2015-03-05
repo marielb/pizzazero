@@ -13,7 +13,7 @@ var PizzaZeroView = Backbone.View.extend({
 		numSlices: 6,
 		address: '',
 		hungerText: 'pizza slices',
-		sectionClass: 'userInput',
+		sectionClass: 'pizzaMain',
 		logoClass: 'large-3',
 	},
 
@@ -54,11 +54,8 @@ var PizzaZeroView = Backbone.View.extend({
 	},
 
 	clickZeroIn: function() {
-		this.data.logoClass = 'large-3 large-10';
-		this.data.sectionClass = 'userInput userInputLeft';
-
-		$('.logo ').addClass('large-10');
-		$('.userInput').addClass('userInputLeft');
+		$('.pizzaMain').addClass('pizzaSidebar');
+		$('.mapCanvas').addClass('large-9');
 	}
 
 });

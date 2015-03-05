@@ -9,4 +9,4 @@ a walking route to a pizza restaurant such that you burn the calories you're abo
 2. sudo npm install -g bower
 3. install dependencies:
     > bower i
-4. Spin up an HTTP server (e.g. `python -m SimpleHTTPServer`) and visit localhost
+4. spin up an HTTP server (e.g. `python -m SimpleHTTPServer`) and visit localhost

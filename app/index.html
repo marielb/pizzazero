@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-framework="react">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,44 +16,41 @@
   		<link href="bower_components/paper-input/paper-input.html" rel="import">
   		<link href="bower_components/paper-slider/paper-slider.html" rel="import">
   		<link href="bower_components/paper-button/paper-button.html" rel="import">
-  		<link rel="import" href="bower_components/google-map/google-map.html">
-  		<link rel="import" href="bower_components/google-map/google-map-directions.html">
+  		<link href="bower_components/google-map/google-map.html" rel="import">
+  		<link href="bower_components/google-map/google-map-directions.html" rel="import">
+
+		<link href="pizza-logo.html" rel="import">
 	</head>
 	<body>
+		<div class="container">
+			<div class="pizzaForm row"></div>
+		</div>
 	</body>
 </html>
 
-
 <script id="pizzazero" type="text/x-handlebars-template">
-	<div class="mapCanvas">
+	<section class="{{sectionClass}} large-3 small-12 columns">
+		<pizza-logo></pizza-logo>
+		<div class="formElements">
+			<div class="startLocation">
+				<paper-input id="address" class="custom" floatingLabel="true" label="address, city, state" value="{{address}}"></paper-input>
+			</div>
+			<br>
+			<div class="hunger">
+				I want <span id="hungerLabel">{{numSlices}}</span> {{hungerText}}
+				<paper-slider id="hunger" pin snaps min="1" max="8" step="1" value="{{numSlices}}"></paper-slider>
+			</div>
+			<br>
+			<paper-button raised id="js-zero-in">zero in</paper-button>
+		</div>
+
+	</section>
+	<div class="mapCanvas columns">
 		<google-map map="{{map}}" latitude="37.779"
 		          longitude="-122.3892"></google-map>
 		<google-map-search map="{{map}}" query="Pizza"
 		                 result="{{result}}"></google-map-search>
 	</div>
-	<section class="{{sectionClass}}">
-		<div class="row">
-			<div class="logo small-12 {{logoClass}} large-centered columns">
-				<h1>pizza</h1>
-				<h1>zer<img src="img/pizza.png" class="zero"></h1>
-				{{test}}
-				<div class="startLocation">
-					<paper-input id="address" class="custom" floatingLabel="true" label="address, city, state" value="{{address}}"></paper-input>
-				</div>
-
-				<br>
-
-				<div class="hunger">
-					I want <span id="hungerLabel">{{numSlices}}</span> {{hungerText}}
-					<paper-slider id="hunger" pin snaps min="1" max="8" step="1" value="{{numSlices}}"></paper-slider>
-				</div>
-
-				<br>
-
-				<paper-button raised id="js-zero-in">zero in</paper-button>
-			</div>
-		</div>
-	</section>
 </script>
 
 <script>
