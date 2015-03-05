@@ -1,9 +1,11 @@
 var PizzaZeroView = Backbone.View.extend({
 
+	map: null,
 	template: null,
 
 	events: {
-		'change #hunger': 'changeNumSlices'
+		'change #hunger': 'changeNumSlices',
+		'click #js-zero-in': 'clickZeroIn'
 	},
 
 	data: {
@@ -11,8 +13,9 @@ var PizzaZeroView = Backbone.View.extend({
 		hungerText: 'pizza slices'
 	},
 
-	initialize: function() {
-		_.bindAll(this, 'render', 'changeNumSlices');
+	initialize: function(options) {
+		this.options = options;
+		_.bindAll(this, 'render', 'changeNumSlices', 'clickZeroIn');
 
 
 
@@ -20,19 +23,11 @@ var PizzaZeroView = Backbone.View.extend({
 		this.template = Handlebars.compile(source);
 
 		this.render();
-
-
-		  var gMap = document.querySelector('google-map');
-		  gMap.addEventListener('api-load', function(e) {
-		    document.querySelector('google-map-search').map = this.map;
-		    console.log(document.querySelector('google-map-search'));
-		    document.querySelector('google-map-search').search();
-		  });
 		
 		this.delegateEvents(this.events);
 		var hunger = document.querySelector('#hunger');
 	},
- 
+
 	render: function() {
 		this.$el.html(this.template(this.data));
 	},
@@ -48,6 +43,16 @@ var PizzaZeroView = Backbone.View.extend({
 		}
 
 		this.render();
+	},
+
+	clickZeroIn: function() {
+		$('.userInput').addClass('userInputLeft').done(function() {
+			$('.userInputLeft').addClass('large-10');
+			$('.userInputLeft').removeClass('large-3');
+		});
 	}
 
 });
+
+
+

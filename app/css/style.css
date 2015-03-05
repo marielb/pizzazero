@@ -1,29 +1,35 @@
-#userInput {
+
+.heading {
+  font-size: 600%;
+}
+
+.userInput {
 	font-family: 'Source Sans Pro', sans-serif;
 	background-color: #F2784B;
 	color: #fff;
 	height: 100%;
-	width: 30%;
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 10;
+	width: 100%;
 }
 
-#userInput-side {
-	width: 24%;
-	z-index: 6;
-	position: absolute;
-	height: 100%;
-	top: 0;
-	left: 0;
+.userInputLeft {
+  width: 30%;
+  transition: width 2s;
 }
 
+.mapCanvas {
+  float: right;
+  height: 100%;
+  width: 70%;
+}
 
-#map-canvas {
-	height: 100%;
-	position: relative;
-	z-index: 1;
+.mapCanvasRight {
+  display: block;
+  width: 70%;
+  transition: width 2s;
 }
 
 .secondaryColor {
