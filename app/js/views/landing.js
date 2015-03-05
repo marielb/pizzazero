@@ -44,11 +44,10 @@ var PizzaZeroView = Backbone.View.extend({
 	},
 
 	clickZeroIn: function() {
-		$('.userInput').removeClass('large-3');
+		$('.logo ').addClass('large-10');
 		$('.userInput').addClass('userInputLeft');
-		var $mapCanvas = $('.mapCanvas').removeClass('mapCanvas');
-		$('.mapCanvas').addClass('mapCanvasRight');
-		google.maps.event.trigger(this.options.map, 'resize');
+		console.log(this.options.map);
+		window.map = this.options.map;
 	}
 
 });
