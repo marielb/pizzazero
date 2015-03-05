@@ -10,7 +10,9 @@ var PizzaZeroView = Backbone.View.extend({
 
 	data: {
 		numSlices: 6,
-		hungerText: 'pizza slices'
+		hungerText: 'pizza slices',
+		sectionClass: 'userInput',
+		logoClass: 'large-3'
 	},
 
 	initialize: function(options) {
@@ -46,6 +48,9 @@ var PizzaZeroView = Backbone.View.extend({
 	},
 
 	clickZeroIn: function() {
+		this.data.logoClass = 'large-3 large-10';
+		this.data.sectionClass = 'userInput userInputLeft';
+
 		$('.logo ').addClass('large-10');
 		$('.userInput').addClass('userInputLeft');
 	}
