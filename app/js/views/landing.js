@@ -10,7 +10,9 @@ var PizzaZeroView = Backbone.View.extend({
 
 	data: {
 		numSlices: 6,
-		hungerText: 'pizza slices'
+		hungerText: 'pizza slices',
+		sectionClass: 'userInput',
+		logoClass: 'large-3'
 	},
 
 	initialize: function(options) {
@@ -23,7 +25,7 @@ var PizzaZeroView = Backbone.View.extend({
 		this.template = Handlebars.compile(source);
 
 		this.render();
-		
+
 		this.delegateEvents(this.events);
 		var hunger = document.querySelector('#hunger');
 	},
@@ -46,10 +48,11 @@ var PizzaZeroView = Backbone.View.extend({
 	},
 
 	clickZeroIn: function() {
-		$('.userInput').addClass('userInputLeft').done(function() {
-			$('.userInputLeft').addClass('large-10');
-			$('.logo').removeClass('large-3');
-		});
+		this.data.logoClass = 'large-3 large-10';
+		this.data.sectionClass = 'userInput userInputLeft';
+
+		$('.logo ').addClass('large-10');
+		$('.userInput').addClass('userInputLeft');
 	}
 
 });

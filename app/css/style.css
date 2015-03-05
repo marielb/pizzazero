@@ -1,18 +1,20 @@
 
+body {
+  z-index: 1;
+}
+
 .heading {
   font-size: 600%;
 }
 
 .userInput {
+  position: absolute;
 	font-family: 'Source Sans Pro', sans-serif;
 	background-color: #F2784B;
 	color: #fff;
 	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 10;
-	width: 100%;
+  width: 100%;
+  z-index: 1002;
 }
 
 .userInputLeft {
@@ -22,14 +24,19 @@
 
 .mapCanvas {
   float: right;
-  height: 100%;
+	height: 100%;
   width: 70%;
+}
+
+.large-10 {
+  transition: width 2s;
 }
 
 .mapCanvasRight {
   display: block;
   width: 70%;
   transition: width 2s;
+  -webkit-transition: width 2s;
 }
 
 .secondaryColor {
@@ -94,7 +101,7 @@ html, body, #map-canvas {
     height: 100%;
     margin: 0px;
     padding: 0px
-  } 
+  }
 
   #map-canvas {
     height: 100%;
