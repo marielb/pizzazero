@@ -14,10 +14,20 @@ var PizzaZeroView = Backbone.View.extend({
 	initialize: function() {
 		_.bindAll(this, 'render', 'changeNumSlices');
 
+
+
 		var source = $('#pizzazero').html();
 		this.template = Handlebars.compile(source);
 
 		this.render();
+
+
+		  var gMap = document.querySelector('google-map');
+		  gMap.addEventListener('api-load', function(e) {
+		    document.querySelector('google-map-search').map = this.map;
+		    console.log(document.querySelector('google-map-search'));
+		    document.querySelector('google-map-search').search();
+		  });
 		
 		this.delegateEvents(this.events);
 		var hunger = document.querySelector('#hunger');

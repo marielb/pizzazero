@@ -16,17 +16,30 @@
   		<link href="bower_components/paper-input/paper-input.html" rel="import">
   		<link href="bower_components/paper-slider/paper-slider.html" rel="import">
   		<link href="bower_components/paper-button/paper-button.html" rel="import">
+  		<link rel="import" href="bower_components/google-map/google-map.html">
+  		<link rel="import" href="bower_components/google-map/google-map-directions.html">
 	</head>
 	<body>
+		<div id="coverCanvas">
+		</div>
+
+		<div class="map">
+			<template is="auto-binding">
+			  <google-map-search map="{{map}}" query="Pizza"
+			                     result="{{result}}"></google-map-search>
+			  <google-map map="{{map}}" latitude="37.779"
+			              longitude="-122.3892"></google-map>
+			  <div>Result: {{result.latitude}}, {{result.longitude}}</div>
+			</template>
+		</div>
 	</body>
 </html>
 
 
 <script id="pizzazero" type="text/x-handlebars-template">
-		<div id="map-canvas"></div>
 	<section id="userInput">
 		<div class="row">
-			<div class="logo small-12 large-3 large-centered columns">
+			<div class="logo small-12 large-10 large-centered columns">
 				<h1>pizza</h1>
 				<h1>zer<img src="img/pizza.png" class="zero"></h1>
 				{{test}}
@@ -49,12 +62,15 @@
 	</section>
 </script>
 
+<script>
+  document.querySelector('google-map-search').search();
+</script>
+
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="node_modules/underscore/underscore.js"></script>
 <script src="node_modules/backbone/backbone.js"></script>
 <script src="bower_components/handlebars/handlebars.js"></script>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 <script type="text/javascript" src="js/views/landing.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 
