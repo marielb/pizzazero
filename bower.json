@@ -1,7 +1,6 @@
 {
   "name": "pizzazero",
   "version": "0.0.0",
-  "directory": "app/bower_components",
   "dependencies": {
     "handlebars": "~3.0.0",
     "polymer": "~0.5.5",
